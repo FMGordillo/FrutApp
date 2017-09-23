@@ -1,12 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import {
+  StackNavigator,
+} from 'react-navigation';
+import {
+  getTheme,
+} from 'react-native-material-kit';
+
+import HomeScreen from './components/Home'
+
+const theme = getTheme();
+
+const Application = StackNavigator({
+  Home: { screen: HomeScreen },
+});
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Application />
     );
   }
 }
